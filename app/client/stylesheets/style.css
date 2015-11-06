@@ -1,6 +1,7 @@
-body {
-  padding-top: 500px;  /* Move body of page below navbar. */
+body, footer {
+
   font-family: Open-Sans, sans-serif;
+  color:#A06E4D;
 }
 
 .header-image {
@@ -11,5 +12,14 @@ body {
 
 .navbar {
   background-color: #90D2F3;
+  border-color: #90D2F3;
   border-radius: 0px;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #A06E4D;
+}
+
+.navbar a.dropdown-toggle {
+  color: #A06E4D;
 }
