@@ -1,3 +1,15 @@
 body {
-  padding-top: 70px;  /* Move body of page below navbar. */
+  padding-top: 500px;  /* Move body of page below navbar. */
+  font-family: Open-Sans, sans-serif;
+}
+
+.header-image {
+  background-image: url("/images/Bears_Logo.jpg");
+  background-size: cover;
+  height: 400px;
+}
+
+.navbar {
+  background-color: #90D2F3;
+  border-radius: 0px;
 }
