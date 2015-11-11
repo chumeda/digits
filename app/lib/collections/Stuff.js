@@ -1,15 +1,15 @@
-stuff = "Stuff";  // avoid typos, this string occurs many times.
+contacts = "Contacts";  // avoid typos, this string occurs many times.
 
-Stuff = new Mongo.Collection(stuff);
+Contacts = new Mongo.Collection(contacts);
 
 Meteor.methods({
   /**
    * Invoked by AutoForm to add a new Stuff record.
    * @param doc The Stuff document.
    */
-  addStuff: function(doc) {
-    check(doc, Stuff.simpleSchema());
-    Stuff.insert(doc);
+  addContacts: function(doc) {
+    check(doc, Contacts.simpleSchema());
+    Contacts.insert(doc);
   },
   /**
    *
@@ -17,16 +17,16 @@ Meteor.methods({
    * @param doc The Stuff document.
    * @param docID It's ID.
    */
-  editStuff: function(doc, docID) {
-    check(doc, Stuff.simpleSchema());
-    Stuff.update({_id: docID}, doc);
+  editContacts: function(doc, docID) {
+    check(doc, Contacts.simpleSchema());
+    Contacts.update({_id: docID}, doc);
   }
 });
 
 // Publish the entire Collection.  Subscription performed in the router.
 if (Meteor.isServer) {
-  Meteor.publish(stuff, function () {
-    return Stuff.find();
+  Meteor.publish(contacts, function () {
+    return Contacts.find();
   });
 }
 
@@ -36,14 +36,14 @@ if (Meteor.isServer) {
  * See: https://github.com/aldeed/meteor-autoform#common-questions
  * See: https://github.com/aldeed/meteor-autoform#affieldinput
  */
-Stuff.attachSchema(new SimpleSchema({
+Contacts.attachSchema(new SimpleSchema({
   name: {
     label: "Name",
     type: String,
     optional: false,
     max: 20,
     autoform: {
-      group: stuff,
+      group: contacts,
       placeholder: "Bicycle"
     }
   },
@@ -52,7 +52,7 @@ Stuff.attachSchema(new SimpleSchema({
     type: Number,
     optional: false,
     autoform: {
-      group: stuff,
+      group: contacts,
       placeholder: "3"
     }
   }
