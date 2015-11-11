@@ -17,10 +17,6 @@
       <ul class="collapse navbar-collapse" id="main-nav">
 
         <ul class="nav navbar-nav navbar-right">
-          <ul class="nav navbar-nav">
-            <li><a href="{{ pathFor 'ListContacts' }}">List Contacts</a> </li>
-          </ul>
-
           {{#if currentUser}}
             <li><a href="{{ pathFor 'AddContacts' }}">Add Contacts</a></li>
             <li><a href="{{ pathFor 'ListContacts' }}">List Contacts</a></li>

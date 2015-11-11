@@ -7,7 +7,7 @@ Meteor.methods({
    * Invoked by AutoForm to add a new Stuff record.
    * @param doc The Stuff document.
    */
-  addContacts: function(doc) {
+  addContact: function(doc) {
     check(doc, Contacts.simpleSchema());
     Contacts.insert(doc);
   },
@@ -37,23 +37,54 @@ if (Meteor.isServer) {
  * See: https://github.com/aldeed/meteor-autoform#affieldinput
  */
 Contacts.attachSchema(new SimpleSchema({
-  name: {
-    label: "Name",
+  first: {
+    label: "First",
     type: String,
     optional: false,
     max: 20,
     autoform: {
       group: contacts,
-      placeholder: "Bicycle"
+      placeholder: "First Name"
     }
   },
-  quantity: {
-    label: "Quantity",
-    type: Number,
+  last: {
+    label: "Last",
+    type: String,
     optional: false,
+    max: 20,
     autoform: {
       group: contacts,
-      placeholder: "3"
+      placeholder: "Last Name"
+    }
+  },
+  address: {
+    label: "Address",
+    type: String,
+    optional: false,
+    max: 20,
+    autoform: {
+      group: contacts,
+      placeholder: "Address"
+    }
+  },
+  phone: {
+    label: "Phone",
+    type: String,
+    optional: false,
+    max: 20,
+    autoform: {
+      group: contacts,
+      placeholder: "Phone Number"
+    }
+  },
+  email: {
+    label: "Email",
+    type: String,
+    optional: false,
+    max: 20,
+    autoform: {
+      group: contacts,
+      placeholder: "Email"
     }
   }
 }));

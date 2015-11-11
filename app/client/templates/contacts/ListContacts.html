@@ -1,37 +1,31 @@
 <template name="ListContacts">
-  <table class="table table-striped table-bordered">
-    <thead>
-    <tr>
-      <th>First</th>
-      <th>Last</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th>Email</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Philip</td>
-      <td>Johnson</td>
-      <td>1680 East West Rd</td>
-      <td>808-956-3498</td>
-      <td>johnson@hawaii.edu</td>
-    </tr>
-    <tr>
-      <td>Philip</td>
-      <td>Johnson</td>
-      <td>1680 East West Rd</td>
-      <td>808-956-3498</td>
-      <td>johnson@hawaii.edu</td>
-    </tr>
-    <tr>
-      <td>Philip</td>
-      <td>Johnson</td>
-      <td>1680 East West Rd</td>
-      <td>808-956-3498</td>
-      <td>johnson@hawaii.edu</td>
-    </tr>
+  {{#IfLoggedIn}}
+  <div class="well">
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>First</th>
+        <th>Last</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Edit</th>
+      </tr>
+      </thead>
 
-    </tbody>
-  </table>
+      <tbody>
+      {{#each contactsList}}
+      <tr>
+        <td>{{first}}</td>
+        <td>{{last}}</td>
+        <td>{{address}}</td>
+        <td>{{phone}}</td>
+        <td>{{email}}</td>
+        <td><a href="{{pathFor 'EditContacts'}}">Edit</a></td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{/IfLoggedIn}}
 </template>
