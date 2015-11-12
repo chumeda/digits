@@ -1,3 +1,5 @@
+/*globals Contacts*/
+
 /**
  * A list of contacts to pre-fill the Collection.
  * @type {*[]}
