@@ -3,6 +3,7 @@
  * See: http://iron-meteor.github.io/iron-router/
  */
 
+/*globals Contacts*/
 
 Router.configure({
   layoutTemplate: 'Layout',
