@@ -7,7 +7,8 @@ Meteor.methods({
    * Invoked by AutoForm to add a new Stuff record.
    * @param doc The Stuff document.
    */
-  addContact: function(doc) {
+  addContacts: function(doc) {
+    console.log("addcontact");
     check(doc, Contacts.simpleSchema());
     Contacts.insert(doc);
   },
